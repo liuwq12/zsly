@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+  <header id="header" class="container">
+    <div class="row mx-0">
+      <div class="col-12 px-0">
+        <div class="header-main">
+          <div class="header-content row text-center mx-0">
+            <div class="header-left col-3 px-0 justify-content-start">
+              <img src="img/header/logo.png" alt="">
+              <span>舟山旅行网</span>
+            </div>
+            <div class="header-center col-5 p-0">
+              <ul class="d-flex justify-content-center" >
+                <li class="active"><a href="index.html">大美舟山</a></li>
+                <li><a href="public_list.html">舟山景点</a></li>
+                <li><a href="food.html">舟山美食</a></li>
+                <li><a href="siren.html">私人订制</a></li>
+                <li><a href="about-us.html">联系我们</a></li>
+              </ul>
+            </div>
+            <div class="header-right col-2 offset-1 p-0">
+              <div class="row login-list">
+                <div class="regist_login col-6 p-0 d-flex justify-content-end">
+                  <a href="javascript:;" onclick="Show();" class="header-login">登录</a>
+                  <!--  -->
+                  <div id="shade" class="c1 hide"></div>
+                  <div id="modal" class="c2 hide">
+                      <span onclick="Hide()" class="cd">×</span>
+                      <div class="login">
+                      <h3>账号登录</h3>
+                      <div class="uname"><input class="w-input" type="text" placeholder="邮箱/会员账号/手机号" /></div>
+                      <div class="upwd"><input class="w-input" type="password" placeholder="请输入密码"/></div>
+                      <div class="forget-pwd">
+                        <label class="rem">
+                          <input type="checkbox" >
+                          <span>记住密码</span>
+                        </label>
+                        <a href="javascriot:;">忘记密码？</a>
+                      </div>
+                      <a href="javascript:void(0)"><button class="dl">登录</button></a>
+                      <div class="zhuche">
+                        <span>还没有账号?</span>
+                        <a href="javascript:;">立即注册!</a>
+                        <div class="login-other">
+                          <a href="javascript:;" class="icon-alipay"></a>
+                          <a href="javascript:;" class="icon-qq"></a>
+                          <a href="javascript:;" class="icon-wechat"></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--  -->
+                  <span>|</span>
+                  <a href="reg.html" class="header-zc">注册</a>
+                </div>
+                <div class="style col-6 p-0 d-flex justify-content-center">
+                  <div>
+                    <img src="img/header/alipay.png" alt="">
+                    <!-- <img src="img/header/wechat_hover.png" alt=""> -->
+                  </div>
+                  <div>
+                    <img src="img/header/QQ.png" alt="">
+                    <!-- <img src="img/header/sina_hover.png" alt="">   -->
+                  </div>
+                  <div>
+                    <img src="img/header/wechat.png" alt="">
+                    <!-- <img src="img/header/QQ_hover.png" alt=""> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+         <!-- 轮播图 -->
+          <div id="lunbo"></div>
+         <!--  -->
+          <div class="kefu">
+            <div class="smImg">
+              <img src="img/header/customerservice2.png" alt="">
+              <p>客服</p>
+            </div>
+            <div class="lgImg">
+              <img src="img/header/customerservice1.png" alt="">
+              <ul class="left">
+                <li>在线</li>
+                <li>客服</li>
+              </ul>
+              <div class="right">
+                <ul>
+                  <li>
+                    <a href=""><img src="img/header/new_online_2.png" alt=""></a>
+                    <a href="">客服一号</a>
+                  </li>
+                  <li>
+                    <a href=""><img src="img/header/new_online_2.png" alt=""></a>
+                    <a href="">客服二号</a>
+                  </li>
+                  <li>
+                    <a href=""><img src="img/header/new_online_2.png" alt=""></a>
+                    <a href="">客服三号</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <script>
+            /*鼠标进入li*/
+            //事件委托找到li元素的父元素
+            $(".header-center ul")
+            //使用鼠标进入事件
+            .on("mouseenter","li",function(){
+              //就给这个li元素加active的class属性,然后移除别的兄弟的active的class属性
+              $(this).addClass("active").siblings('li').removeClass("active")
+            });
+            /*客服动画*/
+            var smImg=document.getElementsByClassName("smImg")[0];
+            var lgImg=document.getElementsByClassName("lgImg")[0];
+            var kefu=document.getElementsByClassName("kefu")[0];
+            kefu.onmouseenter=function(){
+              smImg.style.display="none";
+              lgImg.style.display="block";
+            }
+            kefu.onmouseleave=function(){
+              smImg.style.display="block";
+              lgImg.style.display="none";
+            }
+            //登录
+            function Show(){
+            document.getElementById('shade').classList.remove('hide');
+            document.getElementById('modal').classList.remove('hide');
+            }
+            function Hide(){
+                document.getElementById('shade').classList.add('hide');
+                document.getElementById('modal').classList.add('hide');
+            }
+            var x = document.querySelector("");
+            console.log(x)
+          </script>
+        
+        </div>
+      </div>
+    </div>
+</header>
+</body>
+</html>
